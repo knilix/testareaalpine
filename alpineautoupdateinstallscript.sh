@@ -19,7 +19,7 @@ chmod 700 /opt/scriptfiles/updatescript.sh
 cd && cd /opt/scriptfiles
 ./updatescript.sh
 #
-rm -r /opt/scriptfiles/testarea-main
+rm -r /opt/scriptfiles/testareaalpine-main
 rm /opt/main.zip
 #
 clear
