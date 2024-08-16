@@ -2,7 +2,7 @@
 # Maintener: @knilix
 # Only test
 # Startscript: wget -q -P /opt/ https://github.com/knilix/testareaalpine/archive/refs/heads/main.zip && unzip /opt/main.zip -d /opt/scriptfiles && chmod 700 /opt/scriptfiles/testareaalpine-main/alpineautoupdateinstallscript.sh
-# Ausführbefehl: cd && cd /opt/scriptfiles/testareaalpine-main && ./alpineautoupdateinstallscript.sh
+# Ausführbefehl (einmalig): cd && cd /opt/scriptfiles/testareaalpine-main && ./alpineautoupdateinstallscript.sh
 cd
 #
 mkdir -p /opt/scriptfiles
