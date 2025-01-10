@@ -10,9 +10,18 @@ touch /opt/scriptfiles/updatescript.sh
 touch /opt/scriptfiles/updatelog.txt
 #
 echo '#!/bin/bash' | tee -a /opt/scriptfiles/updatescript.sh
+echo 'echo d=$(date +%y-%m-%d_%H:%M:%S) | tee -a /opt/scriptfiles/updatelog.txt' | tee -a /opt/scriptfiles/updatescript.sh
+echo 'old_kernel=$(uname -r)' | tee -a /opt/scriptfiles/updatescript.sh
 echo 'apk update' | tee -a /opt/scriptfiles/updatescript.sh
 echo 'apk upgrade' | tee -a /opt/scriptfiles/updatescript.sh
-echo 'echo d=$(date +%y-%m-%d_%H:%M:%S) | tee -a /opt/scriptfiles/updatelog.txt' | tee -a /opt/scriptfiles/updatescript.sh
+#
+echo 'new_kernel=$(uname -r)
+#  pruefen, ob sich die Kernel-Version geaendert hat
+if [ "$old_kernel" != "$new_kernel" ]; then
+    reboot
+else
+    exit
+fi'| tee -a /opt/scriptfiles/updatescript.sh
 #
 chmod 700 /opt/scriptfiles/updatescript.sh
 #
